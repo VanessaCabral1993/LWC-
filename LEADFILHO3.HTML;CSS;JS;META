@@ -1,0 +1,59 @@
+                    CSS
+                    
+                    
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>
+
+
+                    HTML
+                    
+                    
+ <template>
+    <lightning-card title="">
+        <template for:each={leaddata} for:item="lee">
+            <c-lead03 key={lee.ide} ide={lee.ide} firstname={lee.firstname} lastname={lee.lastname} status={lee.status} phone={lee.phone} email={lee.email} company={lee.company} annualrevenue={lee.annualrevenue}></c-lead03>
+        </template>
+    </lightning-card>
+
+
+
+
+   
+</template>
+
+
+                           JS
+                           
+                           
+     import { LightningElement } from 'lwc';
+
+export default class Lead03filho extends LightningElement {
+    leaddata = [
+        {ide: 1, firstname: 'Eu sou ', lastname: 'Maria' , status: 'Open - Not Contacted' , phone: 2544945656, email:'maria@comcertidadenascimentosoucidadao.com' , company: 'Eu tenho nome', annualrevenue: 1000000},
+        {ide: 2, firstname: 'Eu sou ', lastname: 'João' , status: 'Working - Contacted' , phone: 5416544264, email:'joao@comcertidadenascimentosoucidadao.com' , company: 'Eu tenho nome', annualrevenue: 200000},       
+       
+    ];
+}
+
+
+                             META
+                             
+                             
+     <?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>
