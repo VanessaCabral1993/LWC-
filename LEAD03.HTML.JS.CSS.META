@@ -1,0 +1,102 @@
+                      CSS
+                      
+                      
+.lead-data {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.lead-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.lead-header p {
+    font-size: 19px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.lead-body p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+h1{
+ color: blueviolet;
+ font-weight: bold;
+}
+
+span{
+    font-weight: bold;
+}
+
+
+                                    HTML
+                                    
+                                    
+ <template>
+    <lightning-card>
+    <div class="lead-data">
+        <div class="lead-header">
+            <h1>{firstname} {lastname}</h1>
+            <p>Status: {status}</p>
+        </div>
+        <div class="lead-body">
+            <p> <span>Telefone:</span>  {phone}</p>
+            <p> <span>Email:</span> {email}</p>
+            <p> <span>Empresa:</span> {company}</p>
+            <p> <span>Receita anual:</span> {annualrevenue}</p>
+        </div>
+    </div>
+</lightning-card>
+</template>
+
+
+                                JS
+                                
+                                
+                              import { LightningElement } from 'lwc';
+
+export default class Empresa extends LightningElement {
+    pessoa = [
+        {
+            id: 345345,
+            primeironome: "Renanzito",
+            sobrenome: "bigodudo",
+            idade: "35",
+            email: "renanzinho@bigoditu.cuom",
+            classificacao: "hot",
+            empresa: "Salesforce",
+            receitaanual: 2000000
+        },
+
+        {
+            id: 345345,
+            primeironome: "bebe",
+            sobrenome: "bigodudo",
+            idade: "35",
+            email: "blabla@bigoditu.cuom",
+            classificacao: "hot",
+            empresa: "Salesforce",
+            receitaanual: 2000000
+        },
+
+    ];
+}
+
+
+                              META
+                              
+                              
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>
