@@ -1,0 +1,41 @@
+                    HTML
+                    
+                    
+<template>
+    <lightning-card title="">
+        <template for:each={oppData} for:item="opp">
+            <c-oppsdaconta key={opp.ide} ide={opp.ide} name={opp.name} amount={opp.amount} stagename={opp.stagename}></c-oppsdaconta>
+        </template>
+    </lightning-card>
+</template>
+
+
+                    JS
+                    
+                    
+import { LightningElement } from 'lwc';
+
+export default class Propriedadepublica extends LightningElement {
+    oppData = [
+        {ide: 1, name: 'Opportunity 1', amount: 1000, stagename: 'Prospect'},
+        {ide: 2, name: 'Opportunity 2', amount: 2000, stagename: 'Negotiation'},
+        {ide: 3, name: 'Opportunity 3', amount: 3000, stagename: 'Closed Won'},
+        {ide: 4, name: 'Opportunity 4', amount: 4000, stagename: 'Closed Lost'},
+        {ide: 5, name: 'Opportunity 5', amount: 5000, stagename: 'Prospect'},
+    ];
+}
+
+
+                   META
+                   
+                   
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+    <target>lightning__AppPage</target>
+    <target>lightning__HomePage</target>
+    <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>
