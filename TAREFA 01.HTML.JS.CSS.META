@@ -1,0 +1,71 @@
+                                        HTML
+
+<template>
+    <lightning-card>
+        <div class="slds-m-around_medium">
+            <template for:each={pessoa} for:item="p">
+                <h1 key={p.id}>Lead: {p.primeironome}{p.sobrenome}</h1>
+                <p key={p.id}>Idade: {p.idade}</p>
+                <p key={p.id}>Email: {p.email}</p>
+                <p key={p.id}>Classificação: {p.classificacao}</p>
+                <p key={p.id}>Empresa: {p.empresa}</p>
+                <p key={p.id}>Receita anual: {p.receitaanual}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
+
+                                      JS
+                                      
+                                      
+import { LightningElement } from 'lwc';
+
+export default class Empresa extends LightningElement {
+    pessoa = [
+        {
+            id: 345345,
+            primeironome: "Renanzito",
+            sobrenome: "bigodudo",
+            idade: "35",
+            email: "renanzinho@bigoditu.cuom",
+            classificacao: "hot",
+            empresa: "Salesforce",
+            receitaanual: 2000000
+        },
+
+        {
+            id: 345345,
+            primeironome: "bebe",
+            sobrenome: "bigodudo",
+            idade: "35",
+            email: "blabla@bigoditu.cuom",
+            classificacao: "hot",
+            empresa: "Salesforce",
+            receitaanual: 2000000
+        },
+
+    ];
+}
+
+                                     CSS
+                                     
+                                    
+div{
+   padding-bottom: 20px;
+}
+
+
+
+                                META
+                                
+                                
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+    <target>lightning__AppPage</target>
+    <target>lightning__HomePage</target>
+    <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>
